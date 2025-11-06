@@ -134,38 +134,28 @@ INTERNLM2_CHAT_MODEL=Qwen2.5-3B-Instruct
 
 ### A. 証拠を表示する（LLM なし・検証用）
 ```powershell
-python -m scripts.ask --storage storage --k 4 ^
-  --llm-backend none --no-rerank --format full ^
-  --q "高市早苗はいつ首相に指名された？"
+python -m scripts.ask --storage storage --k 4 --llm-backend none --no-rerank --format full --q "高市早苗はいつ首相に指名された？"
 ```
 - `--format full`: 命中文書の断片（ソース名 + スニペット）を一覧表示。
 
 ### B. 一行だけの簡潔回答（LLM なし・抽出）
 ```powershell
-python -m scripts.ask --storage storage --k 4 ^
-  --llm-backend none --format concise ^
-  --q "東京都コアCPIは何%？"
+python -m scripts.ask --storage storage --k 4 --llm-backend none --format concise --q "東京都コアCPIは何%？"
 ```
 
 ### C. 自然文の完全回答（OpenAI を使用）
 ```powershell
-python -m scripts.ask --storage storage --k 4 ^
-  --llm-backend openai --llm-model gpt-5-mini ^
-  --q "高市早苗はいつ首相に指名された？"
+python -m scripts.ask --storage storage --k 4 --llm-backend openai --llm-model gpt-5-mini --q "高市早苗はいつ首相に指名された？"
 ```
 
 ### D. 自然文の完全回答（ローカル LLM を使用）
 **LM Studio** の Local Server を起動（例: `http://localhost:1234/v1`）後：
 ```powershell
-python -m scripts.ask --storage storage --k 4 ^
-  --llm-backend internlm2 --llm-model "Qwen2.5-3B-Instruct" ^
-  --q "高市早苗はいつ首相に指名された？"
+python -m scripts.ask --storage storage --k 4 --llm-backend internlm2 --llm-model "Qwen2.5-3B-Instruct" --q "高市早苗はいつ首相に指名された？"
 ```
 **Ollama** を使う場合（例: `http://localhost:11434/v1`）:
 ```powershell
-python -m scripts.ask --storage storage --k 4 ^
-  --llm-backend internlm2 --llm-model "qwen2.5:3b-instruct" ^
-  --q "高市早苗はいつ首相に指名された？"
+python -m scripts.ask --storage storage --k 4 --llm-backend internlm2 --llm-model "qwen2.5:3b-instruct" --q "高市早苗はいつ首相に指名された？"
 ```
 
 > LLM 互換 API は **未指定なら温度を送らない** 実装です（互換性のため）。温度を変えたい時は環境変数 `OPENAI_TEMPERATURE` / `INTERNLM2_TEMPERATURE` を設定してください。
