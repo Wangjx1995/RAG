@@ -9,7 +9,7 @@ Windows ＋ Python 仮想環境で動作確認済み。
 - [1. 前提](#1-前提)
 - [2. 仮想環境の構築](#2-仮想環境の構築)
 - [3. データの差し替え](#3-データの差し替え)
-- [4. インデックス作成](#4-インデックス作成)
+- [4. 索引作成](#4-索引作成)
 - [5. API キーと .env 設定](#5-api-キーと-env-設定)
 - [6. RAG への質問（実行例）](#6-rag-への質問実行例)
 - [7. 基本機能と付加機能](#7-基本機能と付加機能)
@@ -86,16 +86,12 @@ pip install -r requirements.txt
 ### Jina Embedding
 `.env` に `JINA_API_KEY` を設定した上で：
 ```powershell
-python -m scripts.build_index --data data --storage storage ^
-  --chunk 600 --overlap 150 --chunker sent ^
-  --embed-backend jina --embed-model jina-embeddings-v3
+python -m scripts.build_index --data data --storage storage --chunk 600 --overlap 150 --chunker sent --embed-backend jina --embed-model jina-embeddings-v3
 ```
 
 ### OpenAI Embedding
 ```powershell
-python -m scripts.build_index --data data --storage storage ^
-  --chunk 600 --overlap 150 --chunker sent ^
-  --embed-backend openai --embed-model text-embedding-3-small
+python -m scripts.build_index --data data --storage storage --chunk 600 --overlap 150 --chunker sent --embed-backend openai --embed-model text-embedding-3-small
 ```
 
 - 主な引数
