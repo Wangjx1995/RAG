@@ -83,7 +83,7 @@ pip install -r requirements.txt
 
 ## 4. 索引作成
 
-### Jina Embedding（推奨・高速）
+### Jina Embedding
 `.env` に `JINA_API_KEY` を設定した上で：
 ```powershell
 python -m scripts.build_index --data data --storage storage ^
@@ -91,7 +91,7 @@ python -m scripts.build_index --data data --storage storage ^
   --embed-backend jina --embed-model jina-embeddings-v3
 ```
 
-### OpenAI Embedding（将来切替したい場合の例）
+### OpenAI Embedding
 ```powershell
 python -m scripts.build_index --data data --storage storage ^
   --chunk 600 --overlap 150 --chunker sent ^
