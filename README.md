@@ -81,7 +81,7 @@ pip install -r requirements.txt
 
 ---
 
-## 4. インデックス作成
+## 4. 索引作成
 
 ### Jina Embedding（推奨・高速）
 `.env` に `JINA_API_KEY` を設定した上で：
