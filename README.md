@@ -1,7 +1,7 @@
 # RAG デモ
 
 このプロジェクトは、`data/` に置いたデータ（例：日本ニュースの PDF/HTML/TXT）を**検索→（任意で再ランク）→生成**で回答する最小 RAG 実装です。  
-Windows（Surface Laptop など）＋ Python 仮想環境で動作確認済み。
+Windows ＋ Python 仮想環境で動作確認済み。
 
 ---
 
