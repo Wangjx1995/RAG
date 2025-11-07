@@ -1,4 +1,4 @@
-# RAG-Demo for Janpan News
+# RAG-Demo for Japan News
 
 このプロジェクトは、`data/` に置いたデータ（例：日本ニュースの PDF/HTML/TXT）を**検索→（任意で再ランク）→生成**で回答するRAGの実装です。  
 Windows ＋ Python 仮想環境で動作確認済み。
